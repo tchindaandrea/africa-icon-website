@@ -138,7 +138,7 @@ const MAILCHIMP_URL = "https://theafricaicon.us20.list-manage.com/subscribe/post
 // Optional: if you add a custom "University" field to your Mailchimp audience, put its
 // merge tag here (e.g. "MMERGE3", shown in Audience > Settings > Audience fields). Leave
 // blank to skip sending university to Mailchimp.
-const MAILCHIMP_UNIVERSITY_MERGE_TAG = "";
+const MAILCHIMP_UNIVERSITY_MERGE_TAG = "MMERGE7";
 
 function initWaitlistForm() {
   const form = document.getElementById("waitlist-form");
