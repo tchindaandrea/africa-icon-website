@@ -471,7 +471,6 @@ section[id] { scroll-margin-top: 84px; }
   margin-bottom: 6px;
   font-size: 0.9rem;
 }
-.form-row .optional { font-weight: 400; color: #777; }
 .form-row input {
   width: 100%;
   padding: 12px 14px;
