@@ -133,7 +133,7 @@ function initStatRings() {
 // EDIT THIS: paste your Mailchimp embedded-form action URL here.
 // Find it in Mailchimp: Audience > Signup forms > Embedded forms > copy the <form action="...">.
 // It looks like: https://yourorg.usXX.list-manage.com/subscribe/post?u=XXXXXXXX&id=YYYYYYYY
-const MAILCHIMP_URL = "https://theafricaicon.us20.list-manage.com/subscribe/post?u=5dce5f486e620e436cd92db47&id=268d06fa3d&f_id=00fba7e4f0";
+const MAILCHIMP_URL = "https://theafricaicon.us20.list-manage.com/subscribe/post?u=5dce5f486e620e436cd92db47&id=268d06fa3d";
 
 // Optional: if you add a custom "University" field to your Mailchimp audience, put its
 // merge tag here (e.g. "MMERGE3", shown in Audience > Settings > Audience fields). Leave
