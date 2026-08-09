@@ -1,11 +1,14 @@
 # Africa ICON Website
 
-A multi-page marketing site for **Africa ICON** (African Intercollegiate Conference),
-built with plain HTML/CSS/JS — no build step, no dependencies, no templating.
+A mostly single-page marketing site for **Africa ICON** (African Intercollegiate Conference),
+built with plain HTML/CSS/JS — no build step, no dependencies, no templating. Home
+(`index.html`) is one scrolling page (Hero, About, Traction, FAQ, Waitlist); Programming and
+the Pitch Competition are broken out into their own pages since their content didn't fit
+naturally into the scroll.
 
 Since there's no templating system, the header (nav) and footer are duplicated by hand across
-every page (`index.html`, `about.html`, `programming.html`, `faq.html`). If you edit the nav links,
-footer disclaimer, or org logos, update all four files to keep them in sync.
+every page (`index.html`, `programming.html`, `pitch-competition.html`). If you edit the nav
+links, footer disclaimer, or org logos, update all three files to keep them in sync.
 
 ## Running locally
 
@@ -51,7 +54,7 @@ const AFRICA_ICON_START = new Date("2027-02-26T09:00:00");
 ```
 
 Update the time if you get a firmer start time, and update the visible date text in `index.html`
-(`.hero-date`) and `faq.html` (first FAQ answer) to match.
+(`.hero-date` and the first FAQ answer) to match.
 
 ### Traction numbers
 The "Early Momentum" section shows **200+ students** and **100+ universities**. Update the
@@ -72,17 +75,16 @@ the hosts above has a "custom domain" setting in its dashboard that gives you th
 
 ## File structure
 ```
-index.html           Home — hero, countdown, traction snapshot, waitlist form
-about.html            About — mission, Our Mission/Pan-African Community/Cross-Campus Exchange cards
-programming.html      Programming — Workshops/Case Studies/Panels cards, pitch competition banner
-faq.html              FAQ — accordion, links back to Home's waitlist
-css/styles.css        All styling (brand colors as CSS variables at the top)
-js/main.js            Countdown, animated stats, mobile nav, waitlist form, scroll-in reveal animations
-assets/               Web-optimized logo/favicon/social-share images
-assets/logos/         Original full-resolution Africa ICON logo variation files
-assets/org-logos/     HASA, HASS, and Harvard College shield logos
+index.html                Home — hero, countdown, About, Traction, FAQ, and the waitlist form
+programming.html          Programming — Workshops/Case Studies/Panels cards, pitch competition teaser
+pitch-competition.html    Pitch Competition — For-Profit/Non-Profit/Research funding tracks
+css/styles.css            All styling (brand colors as CSS variables at the top)
+js/main.js                Countdown, animated stats, mobile nav, waitlist form, scroll-in reveal animations
+assets/                   Web-optimized logo/favicon/social-share images
+assets/logos/             Original full-resolution Africa ICON logo variation files
+assets/org-logos/         HASA, HASS, and Harvard College shield logos
 ```
 
-The waitlist form and countdown only live on `index.html`. The other three pages link back to it
-via `index.html#waitlist` (the "Join the Waitlist" button in the nav, and a CTA banner near the
-bottom of each page).
+The waitlist form and countdown only live on `index.html`. Programming and Pitch Competition
+link back to it via `index.html#waitlist` (the "Join the Waitlist" button in the nav, and a CTA
+banner near the bottom of each page).
