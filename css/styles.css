@@ -188,6 +188,8 @@ section[id] { scroll-margin-top: 84px; }
   transition: transform 0.15s ease;
 }
 .main-nav a:hover::after { transform: scaleX(1); }
+.main-nav a[aria-current="page"] { color: var(--maroon); }
+.main-nav a[aria-current="page"]::after { transform: scaleX(1); }
 
 .header-actions { display: flex; align-items: center; gap: 14px; }
 
@@ -207,6 +209,24 @@ section[id] { scroll-margin-top: 84px; }
   height: 2px;
   background: var(--maroon);
   border-radius: 2px;
+}
+
+/* ============ Page hero (About / Programming / FAQ banners) ============ */
+.page-hero {
+  background: linear-gradient(160deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 56px 0;
+}
+.page-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 8px;
+}
+.page-hero p {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 1.1rem;
 }
 
 /* ============ Hero ============ */
@@ -378,6 +398,25 @@ section[id] { scroll-margin-top: 84px; }
 .card-icon { font-size: 2rem; margin-bottom: 12px; }
 .card h3 { color: var(--maroon); font-size: 1.2rem; }
 .card p { color: #444; margin: 0; }
+
+.pitch-banner {
+  margin-top: 40px;
+  background: linear-gradient(160deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+  border-radius: var(--radius);
+  padding: 40px 44px;
+  text-align: center;
+}
+.pitch-banner h3 {
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+.pitch-banner p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
 
 /* ============ Traction / stat rings ============ */
 .stats-grid {

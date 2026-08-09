@@ -52,6 +52,7 @@ function initCountdown() {
     minutes: document.getElementById("cd-minutes"),
     seconds: document.getElementById("cd-seconds"),
   };
+  if (!els.days) return; // countdown only exists on the Home page
 
   function tick() {
     const now = new Date();
