@@ -390,7 +390,18 @@ section[id] { scroll-margin-top: 84px; }
   border-left: 3px solid var(--gold);
   border-radius: 0 var(--radius) var(--radius) 0;
 }
-.mission-icon { font-size: 2.2rem; margin-bottom: 14px; }
+.mission-label {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--maroon);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
 .mission-statement p {
   font-family: var(--font-display);
   font-style: italic;
@@ -415,7 +426,6 @@ section[id] { scroll-margin-top: 84px; }
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .card:hover { box-shadow: var(--shadow-soft); transform: translateY(-4px); }
-.card-icon { font-size: 2rem; margin-bottom: 12px; }
 .card h3 { color: var(--maroon); font-size: 1.2rem; }
 .card p { color: #444; margin: 0; }
 
