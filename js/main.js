@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initStatRings();
   initWaitlistForm();
   initScrollReveal();
+  initFlipCards();
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 });
 
@@ -297,4 +298,15 @@ function initScrollReveal() {
   );
 
   items.forEach((el) => observer.observe(el));
+}
+
+/* ---------- Flip cards (Pitch Competition tracks) ---------- */
+function initFlipCards() {
+  const cards = document.querySelectorAll(".flip-card");
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const isFlipped = card.classList.toggle("is-flipped");
+      card.setAttribute("aria-expanded", String(isFlipped));
+    });
+  });
 }
