@@ -381,11 +381,31 @@ section[id] { scroll-margin-top: 84px; }
 }
 
 /* ============ About cards ============ */
+.mission-statement {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  text-align: center;
+  padding: 36px 32px;
+  background: var(--maroon-05);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.mission-icon { font-size: 2.2rem; margin-bottom: 14px; }
+.mission-statement p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: var(--maroon);
+  margin: 0;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 28px;
 }
+.card-grid-2 { max-width: 720px; margin: 0 auto; }
 .card {
   background: var(--white);
   border: 1px solid var(--maroon-10);
