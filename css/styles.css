@@ -192,6 +192,20 @@ section[id] { scroll-margin-top: 84px; }
 .main-nav a[aria-current="page"]::after { transform: scaleX(1); }
 
 .header-actions { display: flex; align-items: center; gap: 14px; }
+.header-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--maroon-10);
+  color: var(--maroon);
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  flex-shrink: 0;
+}
+.header-social:hover { border-color: var(--gold); background: var(--gold-15); }
+.header-social svg { width: 18px; height: 18px; }
 
 .nav-toggle {
   display: none;
