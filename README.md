@@ -57,7 +57,7 @@ Update the time if you get a firmer start time, and update the visible date text
 (`.hero-date` and the first FAQ answer) to match.
 
 ### Traction numbers
-The "Early Momentum" section shows **200+ students** and **100+ universities**. Update the
+The "Early Momentum" section shows **250+ students** and **100+ universities**. Update the
 `data-count-to` values on the `.stat-number` elements in `index.html` whenever these change.
 
 ## Deploying
