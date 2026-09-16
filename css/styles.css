@@ -597,6 +597,18 @@ section[id] { scroll-margin-top: 84px; }
 
 /* ============ Waitlist ============ */
 .section-waitlist { background: var(--maroon-05); }
+.waitlist-social {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 28px;
+}
+.waitlist-social a {
+  color: var(--maroon);
+  font-weight: 700;
+  text-decoration: none;
+}
+.waitlist-social a:hover { text-decoration: underline; }
 .waitlist-form {
   background: var(--white);
   border-radius: var(--radius);
@@ -651,6 +663,21 @@ section[id] { scroll-margin-top: 84px; }
   margin: 0;
   font-size: 1.05rem;
 }
+.footer-social {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  transition: border-color 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+.footer-social:hover { border-color: var(--gold); color: var(--gold); }
+.footer-social svg { width: 20px; height: 20px; }
 .footer-orgs {
   display: flex;
   gap: 32px;
