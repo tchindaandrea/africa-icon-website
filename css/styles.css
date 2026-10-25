@@ -322,6 +322,17 @@ section[id] { scroll-margin-top: 84px; }
   color: var(--gold);
   margin-bottom: 18px;
 }
+.hero-theme {
+  max-width: 560px;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 10px;
+}
+.hero-theme em {
+  font-style: italic;
+  color: var(--gold);
+}
 .hero-tagline {
   max-width: 620px;
   font-size: 1.05rem;
