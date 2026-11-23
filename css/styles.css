@@ -756,70 +756,96 @@ section[id] { scroll-margin-top: 84px; }
 .partner-hero h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); }
 .partner-hero p { font-size: 1.2rem; max-width: 620px; }
 
-.stat-band { background: var(--black); color: var(--white); padding: 72px 0; }
-.stat-band-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  text-align: center;
+/* "Why Partner": dark band, giant stat, icon cards that turn gold on hover */
+.why-band {
+  position: relative;
+  overflow: hidden;
+  padding: 136px 0 144px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 85% 10%, rgba(112, 12, 42, 0.85) 0%, rgba(112, 12, 42, 0) 55%),
+    radial-gradient(circle at 0% 100%, rgba(112, 12, 42, 0.6) 0%, rgba(112, 12, 42, 0) 45%),
+    var(--black);
 }
-.stat-band-item strong {
+.why-band::before,
+.why-band::after {
+  /* thin gold rings for texture */
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(238, 186, 43, 0.18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.why-band::before { width: 620px; height: 620px; top: -260px; right: -180px; }
+.why-band::after { width: 380px; height: 380px; bottom: -200px; left: -120px; }
+.why-band .container { position: relative; z-index: 1; }
+
+.why-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(238, 186, 43, 0.35);
+}
+.why-title h2 {
+  font-size: clamp(2.8rem, 6.5vw, 5rem);
+  line-height: 1;
+  color: var(--white);
+  margin: 0;
+}
+.why-title h2 em { display: block; font-style: italic; font-weight: 500; color: var(--gold); }
+.why-stat { text-align: right; max-width: 340px; }
+.why-stat strong {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 8vw, 5.5rem);
-  line-height: 1;
+  font-size: clamp(5rem, 12vw, 9rem);
+  line-height: 0.9;
   color: var(--gold);
 }
-.stat-band-item span {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.85rem;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
-}
-.stat-band-item + .stat-band-item { border-left: 1px solid rgba(238, 186, 43, 0.25); }
+.why-stat span { display: block; margin-top: 12px; color: rgba(255, 255, 255, 0.8); font-size: 1rem; }
 
-.partner-why {
+.why-cards {
   display: grid;
-  grid-template-columns: 0.9fr 1.3fr;
-  gap: 80px;
-  align-items: start;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 64px;
 }
-.partner-why-head { position: sticky; top: 120px; }
-.partner-why-head h2 {
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  line-height: 1.08;
-  color: var(--maroon);
-}
-.partner-why-head p { font-size: 1.12rem; color: #333; }
-.benefit-tiles {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-.benefit-tile {
-  background: var(--maroon-05);
-  border-radius: var(--radius);
-  padding: 40px 32px;
-  min-height: 250px;
+.why-card {
   display: flex;
   flex-direction: column;
-  transition: background 0.2s ease, transform 0.2s ease;
+  min-height: 320px;
+  padding: 34px 28px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(238, 186, 43, 0.3);
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
-.benefit-tile:nth-child(even) { transform: translateY(40px); }
-.benefit-tile:hover { background: var(--gold-15); }
-.benefit-num {
-  font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: auto;
-  padding-bottom: 28px;
+.why-card:nth-child(even) { margin-top: 48px; }
+.why-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--maroon);
+  transition: background 0.25s ease, color 0.25s ease;
 }
-.benefit-tile h3 { color: var(--maroon); font-size: 1.45rem; margin-bottom: 8px; }
-.benefit-tile p { color: #444; margin: 0; }
+.why-icon svg { width: 30px; height: 30px; }
+.why-card h3 {
+  margin-top: auto;
+  padding-top: 40px;
+  font-size: 1.6rem;
+  color: var(--white);
+  transition: color 0.25s ease;
+}
+.why-card p { margin: 0; color: rgba(255, 255, 255, 0.78); transition: color 0.25s ease; }
+.why-card:hover { background: var(--gold); border-color: var(--gold); transform: translateY(-8px); }
+.why-card:hover h3 { color: var(--maroon); }
+.why-card:hover p { color: var(--maroon-dark); }
+.why-card:hover .why-icon { background: var(--maroon); color: var(--gold); }
 
 .ways-grid {
   display: grid;
@@ -1026,17 +1052,20 @@ section[id] { scroll-margin-top: 84px; }
 }
 
 @media (max-width: 860px) {
-  .contact-grid, .donate-band, .partner-why { grid-template-columns: 1fr; gap: 40px; }
-  .partner-why-head { position: static; }
+  .contact-grid, .donate-band { grid-template-columns: 1fr; gap: 40px; }
+  .why-cards { grid-template-columns: 1fr 1fr; }
+  .why-card:nth-child(even) { margin-top: 0; }
+  .why-band { padding: 96px 0; }
   .ways-grid { grid-template-columns: 1fr 1fr; }
-  .benefit-tile:nth-child(even) { transform: none; }
   .section-roomy, .section-donate { padding: 88px 0; }
 }
 
 @media (max-width: 560px) {
-  .ways-grid, .benefit-tiles, .stat-band-grid { grid-template-columns: 1fr; }
-  .stat-band-item + .stat-band-item { border-left: none; border-top: 1px solid rgba(238, 186, 43, 0.25); padding-top: 28px; }
-  .benefit-tile, .way-card { min-height: 0; }
+  .ways-grid, .why-cards { grid-template-columns: 1fr; }
+  .why-top { flex-direction: column; align-items: flex-start; }
+  .why-stat { text-align: left; }
+  .why-card, .way-card { min-height: 0; }
+  .why-card h3 { padding-top: 24px; }
   .header-actions .header-donate { display: none; }
   .main-nav .nav-donate { display: block; }
   .form-row-2 { grid-template-columns: 1fr; gap: 0; }
