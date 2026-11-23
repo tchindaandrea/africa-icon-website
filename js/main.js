@@ -325,7 +325,7 @@ function initPartnerForm() {
 
   // Confirmation after a non-JS fallback submission redirects back here.
   if (new URLSearchParams(window.location.search).get("sent") === "1") {
-    status.textContent = "Thank you! Your message has been sent — we'll be in touch soon.";
+    status.textContent = "Thanks! We got your message and will reply soon.";
     status.className = "form-status success";
   }
 
@@ -360,7 +360,7 @@ function initPartnerForm() {
         if (!ok || String(data.success) === "false") {
           throw new Error(data.message || "Something went wrong.");
         }
-        status.textContent = "Thank you! Your message has been sent — we'll be in touch soon.";
+        status.textContent = "Thanks! We got your message and will reply soon.";
         status.className = "form-status success";
         form.reset();
       })
