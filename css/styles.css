@@ -738,17 +738,16 @@ section[id] { scroll-margin-top: 84px; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
-    "key  key  aser"
-    "key  key  work"
-    "conv fair pitch";
+    "aser work pitch"
+    "key  conv fair";
   gap: 20px;
 }
 .prog-tile {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 280px;
-  padding: 32px 30px;
+  min-height: 240px;
+  padding: 30px 28px;
   border-radius: 22px;
   overflow: hidden;
   text-decoration: none;
@@ -775,32 +774,33 @@ section[id] { scroll-margin-top: 84px; }
   line-height: 1;
   opacity: 0.35;
 }
-.prog-tile h3 { margin: 48px 0 10px; font-size: 1.55rem; }
+.prog-tile h3 { margin: 36px 0 10px; font-size: 1.45rem; }
 .prog-tile p { margin: 0; font-size: 1rem; line-height: 1.55; }
 
-.prog-key {
-  grid-area: key;
-  color: var(--white);
-  background:
-    radial-gradient(circle at 100% 0%, rgba(238, 186, 43, 0.25) 0%, rgba(238, 186, 43, 0) 50%),
-    linear-gradient(160deg, var(--maroon) 0%, var(--maroon-dark) 100%);
-  padding: 44px 44px 48px;
-}
-.prog-key::after {
+/* The three headline sessions: taller tiles, bigger type, a gold ring for texture */
+.prog-feature { min-height: 440px; padding: 38px 34px 40px; }
+.prog-feature::after {
   content: "";
   position: absolute;
-  width: 420px;
-  height: 420px;
-  right: -140px;
-  bottom: -200px;
-  border: 1px solid rgba(238, 186, 43, 0.3);
+  width: 300px;
+  height: 300px;
+  right: -120px;
+  bottom: -140px;
   border-radius: 50%;
+  border: 1px solid currentColor;
+  opacity: 0.18;
+  pointer-events: none;
 }
-.prog-key .prog-icon { width: 76px; height: 76px; background: var(--gold); color: var(--maroon); }
-.prog-key .prog-icon svg { width: 36px; height: 36px; }
-.prog-key .prog-num { font-size: 5rem; color: var(--gold); opacity: 0.6; }
-.prog-key h3 { font-size: clamp(2rem, 3.6vw, 3rem); color: var(--white); }
-.prog-key p { font-size: 1.15rem; max-width: 460px; color: rgba(255, 255, 255, 0.88); }
+.prog-feature .prog-icon { width: 72px; height: 72px; }
+.prog-feature .prog-icon svg { width: 34px; height: 34px; }
+.prog-feature .prog-num { font-size: 4.2rem; opacity: 0.5; }
+.prog-feature h3 { font-size: clamp(1.9rem, 2.8vw, 2.4rem); line-height: 1.1; }
+.prog-feature p { font-size: 1.08rem; }
+
+.prog-key { grid-area: key; background: var(--white); border: 2px solid var(--maroon); color: #333; }
+.prog-key .prog-icon { background: var(--maroon); color: var(--gold); }
+.prog-key .prog-num { color: var(--maroon); }
+.prog-key h3 { color: var(--maroon); }
 
 .prog-aser { grid-area: aser; background: var(--gold); color: var(--maroon-dark); }
 .prog-aser .prog-icon { background: var(--maroon); color: var(--gold); }
@@ -816,7 +816,7 @@ section[id] { scroll-margin-top: 84px; }
 .prog-conv .prog-num { color: var(--maroon); }
 .prog-conv h3 { color: var(--maroon); }
 
-.prog-fair { grid-area: fair; background: var(--white); border: 2px solid var(--maroon); color: #333; }
+.prog-fair { grid-area: fair; background: var(--white); border: 2px solid var(--gold); color: #333; }
 .prog-fair .prog-icon { background: var(--gold); color: var(--maroon); }
 .prog-fair .prog-num { color: var(--maroon); }
 .prog-fair h3 { color: var(--maroon); }
@@ -1138,10 +1138,10 @@ section[id] { scroll-margin-top: 84px; }
   .prog-bento {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "key  key"
-      "aser work"
-      "conv fair"
-      "pitch pitch";
+      "aser  work"
+      "pitch pitch"
+      "key   conv"
+      "fair  fair";
   }
   .why-cards { grid-template-columns: 1fr 1fr; }
   .why-card:nth-child(even) { margin-top: 0; }
@@ -1152,10 +1152,9 @@ section[id] { scroll-margin-top: 84px; }
 
 @media (max-width: 560px) {
   .ways-grid, .why-cards { grid-template-columns: 1fr; }
-  .prog-bento { grid-template-columns: 1fr; grid-template-areas: "key" "aser" "work" "conv" "fair" "pitch"; }
+  .prog-bento { grid-template-columns: 1fr; grid-template-areas: "aser" "work" "pitch" "key" "conv" "fair"; }
   .prog-tile { min-height: 0; }
-  .prog-key { padding: 34px 28px; }
-  .prog-key .prog-num { font-size: 3.6rem; }
+  .prog-feature { min-height: 340px; }
   .why-top { flex-direction: column; align-items: flex-start; }
   .why-card, .way-card { min-height: 0; }
   .why-card h3 { padding-top: 24px; }
