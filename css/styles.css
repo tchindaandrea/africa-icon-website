@@ -815,6 +815,33 @@ section[id] { scroll-margin-top: 84px; }
 .prog-pitch:hover .prog-arrow { transform: translateX(6px); }
 
 /* ============ Team page ============ */
+.team-intro {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px;
+  align-items: end;
+  padding-bottom: 56px;
+  margin-bottom: 64px;
+  border-bottom: 1px solid var(--maroon-10);
+}
+.team-intro-head h2 {
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 1;
+  color: var(--maroon);
+}
+.team-intro-head h2 em { display: block; font-weight: 500; color: var(--gold); }
+.team-intro-body p { font-size: 1.12rem; color: #333; }
+.team-intro-body .team-intro-kicker {
+  margin: 0;
+  padding-left: 18px;
+  border-left: 3px solid var(--gold);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.45;
+  color: var(--maroon);
+}
 .team-grid {
   display: flex;
   flex-wrap: wrap;
@@ -1190,7 +1217,7 @@ section[id] { scroll-margin-top: 84px; }
 }
 
 @media (max-width: 860px) {
-  .contact-grid, .donate-band { grid-template-columns: 1fr; gap: 40px; }
+  .contact-grid, .donate-band, .team-intro { grid-template-columns: 1fr; gap: 32px; }
   .prog-bento {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:

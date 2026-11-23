@@ -82,9 +82,8 @@ ICON. Once you have real event or team photos, swap them in — the hero photos 
 
 ### Team page
 `team.html` shows each team member's photo, role, and school; hovering (or tapping on a phone) slides
-up their bio. Headshots live in `assets/team/` as `firstname-lastname.jpg`. The current ones were
-cropped from a document screenshot, so they're low resolution: to swap in an original, save it over
-the matching file (portrait orientation, roughly 4:5 or 3:4, at least 800px wide). To add someone,
+up their bio. Headshots live in `assets/team/` as `firstname-lastname.jpg`, cropped to 3:4 portrait at 720×960.
+To replace one, save a new 3:4 portrait over the matching file. To add someone,
 copy one `<article class="team-card">` block in `team.html` and change the name, role, school, photo,
 and bio.
 
