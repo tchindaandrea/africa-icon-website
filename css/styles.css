@@ -746,8 +746,8 @@ section[id] { scroll-margin-top: 84px; }
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 240px;
-  padding: 30px 28px;
+  min-height: 340px;
+  padding: 34px 30px 36px;
   border-radius: 22px;
   overflow: hidden;
   text-decoration: none;
@@ -774,28 +774,9 @@ section[id] { scroll-margin-top: 84px; }
   line-height: 1;
   opacity: 0.35;
 }
-.prog-tile h3 { margin: 36px 0 10px; font-size: 1.45rem; }
+.prog-tile h3 { margin: 40px 0 10px; font-size: 1.6rem; line-height: 1.15; }
 .prog-tile p { margin: 0; font-size: 1rem; line-height: 1.55; }
 
-/* The three headline sessions: taller tiles, bigger type, a gold ring for texture */
-.prog-feature { min-height: 440px; padding: 38px 34px 40px; }
-.prog-feature::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  right: -120px;
-  bottom: -140px;
-  border-radius: 50%;
-  border: 1px solid currentColor;
-  opacity: 0.18;
-  pointer-events: none;
-}
-.prog-feature .prog-icon { width: 72px; height: 72px; }
-.prog-feature .prog-icon svg { width: 34px; height: 34px; }
-.prog-feature .prog-num { font-size: 4.2rem; opacity: 0.5; }
-.prog-feature h3 { font-size: clamp(1.9rem, 2.8vw, 2.4rem); line-height: 1.1; }
-.prog-feature p { font-size: 1.08rem; }
 
 .prog-key { grid-area: key; background: var(--white); border: 2px solid var(--maroon); color: #333; }
 .prog-key .prog-icon { background: var(--maroon); color: var(--gold); }
@@ -1140,9 +1121,8 @@ section[id] { scroll-margin-top: 84px; }
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "aser  work"
-      "pitch pitch"
-      "key   conv"
-      "fair  fair";
+      "pitch key"
+      "conv  fair";
   }
   .why-cards { grid-template-columns: 1fr 1fr; }
   .why-card:nth-child(even) { margin-top: 0; }
@@ -1156,7 +1136,6 @@ section[id] { scroll-margin-top: 84px; }
   .way-card-cta { grid-column: auto; }
   .prog-bento { grid-template-columns: 1fr; grid-template-areas: "aser" "work" "pitch" "key" "conv" "fair"; }
   .prog-tile { min-height: 0; }
-  .prog-feature { min-height: 340px; }
   .why-top { flex-direction: column; align-items: flex-start; }
   .why-card, .way-card { min-height: 0; }
   .why-card h3 { padding-top: 24px; }
