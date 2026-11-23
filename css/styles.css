@@ -960,6 +960,7 @@ section[id] { scroll-margin-top: 84px; }
   margin-bottom: 14px;
 }
 .way-card-cta {
+  grid-column: span 2;
   background: linear-gradient(160deg, var(--maroon) 0%, var(--maroon-dark) 100%);
   border-top-color: var(--maroon);
 }
@@ -1152,6 +1153,7 @@ section[id] { scroll-margin-top: 84px; }
 
 @media (max-width: 560px) {
   .ways-grid, .why-cards { grid-template-columns: 1fr; }
+  .way-card-cta { grid-column: auto; }
   .prog-bento { grid-template-columns: 1fr; grid-template-areas: "aser" "work" "pitch" "key" "conv" "fair"; }
   .prog-tile { min-height: 0; }
   .prog-feature { min-height: 340px; }
