@@ -7,8 +7,8 @@ the Pitch Competition are broken out into their own pages since their content di
 naturally into the scroll.
 
 Since there's no templating system, the header (nav) and footer are duplicated by hand across
-every page (`index.html`, `programming.html`, `pitch-competition.html`, `partner.html`). If you edit the nav
-links, footer disclaimer, or org logos, update all four files to keep them in sync.
+every page (`index.html`, `programming.html`, `pitch-competition.html`, `partner.html`, `team.html`). If you edit the nav
+links, footer disclaimer, or org logos, update all five files to keep them in sync.
 
 ## Running locally
 
@@ -80,6 +80,14 @@ via `images.unsplash.com/<photo-id>?...`. They're generic city/student imagery, 
 ICON. Once you have real event or team photos, swap them in — the hero photos are set with
 `style="--hero-img: url(...)"` on each page's hero section.
 
+### Team page
+`team.html` shows each team member's photo, role, and school; hovering (or tapping on a phone) slides
+up their bio. Headshots live in `assets/team/` as `firstname-lastname.jpg`. The current ones were
+cropped from a document screenshot, so they're low resolution: to swap in an original, save it over
+the matching file (portrait orientation, roughly 4:5 or 3:4, at least 800px wide). To add someone,
+copy one `<article class="team-card">` block in `team.html` and change the name, role, school, photo,
+and bio.
+
 ## Deploying
 This is a fully static site — any static host works:
 - **Netlify / Vercel**: drag-and-drop the folder, or connect a Git repo.
@@ -98,6 +106,8 @@ the hosts above has a "custom domain" setting in its dashboard that gives you th
 index.html                Home — hero, countdown, About, Traction, FAQ, and the waitlist form
 programming.html          Programming — session cards with photos, pitch competition teaser
 partner.html              Partner With Us — why partner, ways to get involved, contact form (FormSubmit)
+team.html                 Meet the Team — photo cards with hover bios
+assets/team/              Team headshots
 pitch-competition.html    Pitch Competition — For-Profit/Non-Profit/Research funding tracks
 css/styles.css            All styling (brand colors as CSS variables at the top)
 js/main.js                Countdown, animated stats, mobile nav, waitlist form, scroll-in reveal animations

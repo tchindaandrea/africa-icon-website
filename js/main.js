@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollReveal();
   initFlipCards();
   initPartnerForm();
+  initTeamCards();
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 });
 
@@ -374,5 +375,24 @@ function initPartnerForm() {
         submitBtn.disabled = false;
         submitBtn.textContent = "Send Inquiry";
       });
+  });
+}
+
+/* ---------- Team cards: tap to show bio on touch screens ---------- */
+function initTeamCards() {
+  const cards = document.querySelectorAll(".team-card");
+  cards.forEach((card) => {
+    const toggle = () => {
+      const willOpen = !card.classList.contains("is-open");
+      cards.forEach((c) => c.classList.remove("is-open"));
+      card.classList.toggle("is-open", willOpen);
+    };
+    card.addEventListener("click", toggle);
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggle();
+      }
+    });
   });
 }
