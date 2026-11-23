@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initWaitlistForm();
   initScrollReveal();
   initFlipCards();
+  initPartnerForm();
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 });
 
@@ -308,5 +309,70 @@ function initFlipCards() {
       const isFlipped = card.classList.toggle("is-flipped");
       card.setAttribute("aria-expanded", String(isFlipped));
     });
+  });
+}
+
+/* ---------- Partner / sponsor contact form (FormSubmit) ---------- */
+// Sends to partnerships@ with info@ CC'd (see hidden fields in partner.html).
+// Uses FormSubmit's AJAX endpoint so the visitor stays on the page. If JS fails,
+// the form still posts normally to the same address and redirects back via _next.
+function initPartnerForm() {
+  const form = document.getElementById("partner-form");
+  if (!form) return;
+  const status = document.getElementById("partner-status");
+  const submitBtn = document.getElementById("partner-submit");
+  const fields = form.querySelectorAll("input:not([type=hidden]), select, textarea");
+
+  // Confirmation after a non-JS fallback submission redirects back here.
+  if (new URLSearchParams(window.location.search).get("sent") === "1") {
+    status.textContent = "Thank you! Your message has been sent — we'll be in touch soon.";
+    status.className = "form-status success";
+  }
+
+  fields.forEach((field) => {
+    field.addEventListener("input", () => field.classList.remove("field-error"));
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      fields.forEach((field) => {
+        field.classList.toggle("field-error", !field.checkValidity());
+      });
+      form.reportValidity();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    status.textContent = "";
+    status.className = "form-status";
+
+    const ajaxUrl = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
+    fetch(ajaxUrl, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: new FormData(form),
+    })
+      .then((res) => res.json().catch(() => ({})).then((data) => ({ ok: res.ok, data })))
+      .then(({ ok, data }) => {
+        if (!ok || String(data.success) === "false") {
+          throw new Error(data.message || "Something went wrong.");
+        }
+        status.textContent = "Thank you! Your message has been sent — we'll be in touch soon.";
+        status.className = "form-status success";
+        form.reset();
+      })
+      .catch(() => {
+        status.innerHTML =
+          'Sorry, that didn\'t go through. Please email us directly at ' +
+          '<a href="mailto:partnerships@theafricaicon.com">partnerships@theafricaicon.com</a>.';
+        status.className = "form-status error";
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Inquiry";
+      });
   });
 }

@@ -169,6 +169,7 @@ section[id] { scroll-margin-top: 84px; }
 }
 
 .main-nav ul { display: flex; gap: 28px; }
+.main-nav a, .header-actions .btn { white-space: nowrap; }
 .main-nav a {
   text-decoration: none;
   font-weight: 600;
@@ -670,6 +671,159 @@ section[id] { scroll-margin-top: 84px; }
 .form-status.success { color: #1b7a3d; }
 .form-status.error { color: #b3261e; }
 
+/* ============ Photo-backed heroes ============
+   Photo sits under a strong maroon wash so the brand color still dominates
+   and white/gold text keeps its contrast. Set the photo per page with
+   style="--hero-img: url('...')". */
+.hero-photo,
+.page-hero-photo {
+  background:
+    linear-gradient(160deg, rgba(112, 12, 42, 0.9) 0%, rgba(76, 8, 25, 0.94) 100%),
+    var(--hero-img) center / cover no-repeat,
+    var(--maroon-dark);
+}
+.page-hero-photo { padding: 88px 0; }
+
+/* ============ Header donate ============ */
+.header-donate { white-space: nowrap; }
+.main-nav .nav-donate { display: none; }
+.main-nav .nav-donate a { color: var(--maroon); font-weight: 700; }
+
+.btn-ghost-maroon { background: transparent; color: var(--maroon); border-color: var(--maroon); }
+.btn-ghost-maroon:hover { background: var(--maroon-05); }
+
+/* ============ Centered text blocks (Donate, Partner "Why") ============ */
+.split-solo { text-align: center; }
+.split-solo .split-ctas { justify-content: center; }
+.split-solo .benefit-list { text-align: left; max-width: 580px; margin: 24px auto 0; }
+.split-body h2 { color: var(--maroon); font-size: clamp(1.8rem, 3.2vw, 2.3rem); }
+.split-body p { color: #333; font-size: 1.05rem; }
+.eyebrow-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--maroon);
+  background: var(--gold-15);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 5px 14px;
+  margin-bottom: 14px;
+}
+.donate-note { font-style: italic; color: #555 !important; font-size: 0.98rem !important; }
+.split-ctas, .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.cta-row { justify-content: center; }
+.cta-sub { text-align: center; margin: 22px 0 0; color: #555; }
+.cta-sub a { color: var(--maroon); font-weight: 700; text-decoration: none; }
+.cta-sub a:hover { text-decoration: underline; }
+.section-donate { background: var(--maroon-05); border-top: 4px solid var(--gold); }
+
+/* ============ Partner page ============ */
+.stat-strip {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.stat-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(238, 186, 43, 0.45);
+  border-radius: var(--radius);
+  padding: 14px 22px;
+  min-width: 150px;
+}
+.stat-chip strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--gold);
+  line-height: 1.1;
+}
+.stat-chip span { font-size: 0.85rem; color: rgba(255, 255, 255, 0.85); }
+
+.benefit-list { margin: 18px 0 0; }
+.benefit-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 14px;
+  color: #333;
+}
+.benefit-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: inset 0 0 0 4px var(--maroon);
+}
+.benefit-list strong { color: var(--maroon); font-weight: 700; }
+
+.tier-card { text-align: left; border-top: 4px solid var(--gold); }
+.tier-card .tier-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: start;
+}
+.contact-aside h2 { color: var(--maroon); text-align: left; }
+.contact-aside p { color: #333; }
+.contact-emails { margin-top: 24px; }
+.contact-emails li { margin-bottom: 14px; }
+.contact-emails span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #777;
+}
+.contact-emails a { color: var(--maroon); font-weight: 700; text-decoration: none; }
+.contact-emails a:hover { text-decoration: underline; }
+.donate-aside {
+  margin-top: 28px;
+  padding: 22px;
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+  color: var(--white);
+}
+.donate-aside h3 { color: var(--gold); font-size: 1.2rem; margin-bottom: 6px; }
+.donate-aside p { color: rgba(255, 255, 255, 0.88) !important; font-size: 0.95rem; }
+
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--maroon-10);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--white);
+  transition: border-color 0.15s ease;
+}
+.form-row textarea { min-height: 140px; resize: vertical; }
+.form-row select:focus,
+.form-row textarea:focus { outline: none; border-color: var(--maroon); }
+.form-row select.field-error,
+.form-row textarea.field-error { border-color: #b3261e; }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-row .optional { font-weight: 400; color: #777; }
+.form-note { font-size: 0.82rem; color: #777; text-align: center; margin: 12px 0 0; }
+
 /* ============ Footer ============ */
 .site-footer {
   background: var(--black);
@@ -753,7 +907,7 @@ section[id] { scroll-margin-top: 84px; }
 .footer-bottom a { color: var(--gold); text-decoration: none; }
 
 /* ============ Responsive ============ */
-@media (max-width: 860px) {
+@media (max-width: 1040px) {
   .main-nav {
     position: fixed;
     top: 68px;
@@ -765,15 +919,27 @@ section[id] { scroll-margin-top: 84px; }
     overflow: hidden;
     transition: max-height 0.25s ease;
   }
-  .main-nav.is-open { max-height: 260px; }
+  .main-nav.is-open { max-height: 560px; }
   .main-nav ul { flex-direction: column; gap: 0; padding: 8px 24px 16px; }
   .main-nav li { border-bottom: 1px solid var(--maroon-05); }
   .main-nav a { display: block; padding: 14px 0; }
-  .header-actions .btn-small { display: none; }
+  .header-actions .btn-small:not(.header-donate) { display: none; }
   .nav-toggle { display: flex; }
 }
 
+@media (max-width: 1180px) {
+  .main-nav ul { gap: 18px; }
+  .main-nav a { font-size: 0.9rem; }
+}
+
+@media (max-width: 860px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
 @media (max-width: 560px) {
+  .header-actions .header-donate { display: none; }
+  .main-nav .nav-donate { display: block; }
+  .form-row-2 { grid-template-columns: 1fr; gap: 0; }
   .countdown { gap: 8px; }
   .countdown-unit { min-width: 68px; padding: 10px 6px; }
   .stats-grid { gap: 32px; }

@@ -7,8 +7,8 @@ the Pitch Competition are broken out into their own pages since their content di
 naturally into the scroll.
 
 Since there's no templating system, the header (nav) and footer are duplicated by hand across
-every page (`index.html`, `programming.html`, `pitch-competition.html`). If you edit the nav
-links, footer disclaimer, or org logos, update all three files to keep them in sync.
+every page (`index.html`, `programming.html`, `pitch-competition.html`, `partner.html`). If you edit the nav
+links, footer disclaimer, or org logos, update all four files to keep them in sync.
 
 ## Running locally
 
@@ -57,8 +57,28 @@ Update the time if you get a firmer start time, and update the visible date text
 (`.hero-date` and the first FAQ answer) to match.
 
 ### Traction numbers
-The "Early Momentum" section shows **390+ students** and **100+ universities**. Update the
-`data-count-to` values on the `.stat-number` elements in `index.html` whenever these change.
+The "Early Momentum" section shows **400+ students** and **100+ universities**. Update the
+`data-count-to` values on the `.stat-number` elements in `index.html` whenever these change — and
+the matching `.stat-chip` numbers at the top of `partner.html`.
+
+### Donations (GoFundMe)
+The GoFundMe link (`https://gofund.me/07dfc017f`) appears in the header "Donate" button, the mobile
+menu, the Donate section on Home, the CTAs on Programming / Pitch Competition / Partner, and the
+footer on every page. If the link changes, search-and-replace it across all `.html` files.
+
+### Partner / sponsor contact form
+`partner.html` has a contact form powered by [FormSubmit](https://formsubmit.co) (free, no account).
+Submissions go to **partnerships@theafricaicon.com** with **info@theafricaicon.com** CC'd
+(hidden `_cc` field). **One-time setup:** the very first submission triggers an activation email to
+partnerships@ — click the link in it, or no messages will be delivered. After activating, FormSubmit
+also gives you a random alias you can swap into the form's `action` so the raw address isn't in the
+page source (optional).
+
+### Photos
+Photos are hotlinked from Unsplash (free to use under the Unsplash License, no attribution required)
+via `images.unsplash.com/<photo-id>?...`. They're generic city/student imagery, not photos of Africa
+ICON. Once you have real event or team photos, swap them in — the hero photos are set with
+`style="--hero-img: url(...)"` on each page's hero section.
 
 ## Deploying
 This is a fully static site — any static host works:
@@ -76,7 +96,8 @@ the hosts above has a "custom domain" setting in its dashboard that gives you th
 ## File structure
 ```
 index.html                Home — hero, countdown, About, Traction, FAQ, and the waitlist form
-programming.html          Programming — Workshops/Case Studies/Panels cards, pitch competition teaser
+programming.html          Programming — session cards with photos, pitch competition teaser
+partner.html              Partner With Us — why partner, ways to get involved, contact form (FormSubmit)
 pitch-competition.html    Pitch Competition — For-Profit/Non-Profit/Research funding tracks
 css/styles.css            All styling (brand colors as CSS variables at the top)
 js/main.js                Countdown, animated stats, mobile nav, waitlist form, scroll-in reveal animations
